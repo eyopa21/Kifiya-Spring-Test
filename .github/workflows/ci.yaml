@@ -26,8 +26,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Format code with Maven fmt plugin
-        run: mvn fmt:format
+#      - name: Format code with Maven fmt plugin
+#        run: mvn fmt:format
 
   lint:
     needs: format
