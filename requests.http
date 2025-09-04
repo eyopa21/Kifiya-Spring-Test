@@ -1,0 +1,71 @@
+### Create Products
+POST http://localhost:8080/api/v1/products
+Content-Type: application/json
+
+
+  {
+    "name": "Laptop",
+    "category": "ELECTRONICS",
+    "price": 1000.00,
+    "stock": 10
+  }
+###
+GET http://localhost:8080/api/v1/products
+Accept: application/json
+
+
+###
+GET http://localhost:8080/api/v1/products/643235b1-36f8-4bf8-a00f-89f7f5fd169a
+Accept: application/json
+
+
+### Create Promotion: 10% off Electronics (priority 10)
+POST http://localhost:8080/api/v1/promotions
+Content-Type: application/json
+
+{
+  "type": "PERCENT_OFF_CATEGORY",
+  "category": "ELECTRONICS",
+  "percentOff": 10,
+  "priority": 10
+}
+
+###
+
+### Create Promotion: Buy 2 Get 1 Free on a product (replace PRODUCT_ID)
+POST http://localhost:8080/api/v1/promotions
+Content-Type: application/json
+
+{
+  "type": "BUY_X_GET_Y",
+  "productId": "a7ef40a4-8a98-4131-9435-dc3e50c7b7c6",
+  "buyQty": 2,
+  "freeQty": 1,
+  "priority": 20
+}
+
+###
+
+### Quote
+POST http://localhost:8080/api/v1/cart/quote
+Content-Type: application/json
+
+{
+  "items": [
+    { "productId": "643235b1-36f8-4bf8-a00f-89f7f5fd169a", "qty": 3 }
+  ],
+  "customerSegment": "REGULAR"
+}
+
+
+### Confirm (with Idempotency-Key)
+POST http://localhost:8080/api/v1/cart/confirm
+Content-Type: application/json
+Idempotency-Key: abc-kklkd
+
+{
+  "items": [
+    { "productId": "643235b1-36f8-4bf8-a00f-89f7f5fd169a", "qty": 3 }
+  ],
+  "customerSegment": "REGULAR"
+}
