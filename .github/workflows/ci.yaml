@@ -28,7 +28,7 @@ jobs:
 
 #      - name: Format code with Maven fmt plugin
 #        run: mvn fmt:format
-#
+
 #  lint:
 #    needs: format
 #    runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
 #        run: mvn checkstyle:check
 
   build-and-push:
-    needs: [format, lint]
+    needs: [format]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
