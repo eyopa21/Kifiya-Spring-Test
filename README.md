@@ -1,4 +1,4 @@
-# Sky Menu - Spring Boot Application
+# Kifiya-test - Spring Boot Application
 
 This is a Spring Boot–based backend application that manages **Products**, **Promotions**, and **Carts**.  
 It exposes REST APIs for creating products, applying promotions, and generating quotes.
