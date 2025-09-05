@@ -13,7 +13,7 @@ It exposes REST APIs for creating products, applying promotions, and generating 
 - Docker support for containerized deployment
 - CI/CD via GitHub Actions
 - Deployed on [Render -> https://kifiya-test-17486418661.onrender.com](https://kifiya-test-17486418661.onrender.com)
-
+- Swagger Documentation [https://kifiya-test-17486418661.onrender.com/swagger-ui/index.html#/](https://kifiya-test-17486418661.onrender.com)
 ---
 
 ## 📦 Tech Stack
